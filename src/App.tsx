@@ -11,12 +11,19 @@ function App() {
 	return (
 		<HashRouter>
 			<Routes>
-				
-				<Route path="/contact" element={<PreContact />} />
+				{
+				/* Until finished 
 				<Route path="/" element={<Home />} />
 				<Route path="/dev" element={<Dev />} />
+				*/}
 
 				{/* Default route handler*/}
+				{/* Until finished
+					<Route path="*" element={<Navigate to="/" />} />
+				*/}
+
+				<Route path="/" element={<PreContact />} />
+
 				<Route path="*" element={<Navigate to="/" />} />
 
 			</Routes>

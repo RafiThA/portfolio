@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-page-enter1: page-enter 1200ms ease-out both;
+  --animate-page-enter2: page-enter 1400ms ease-out both;
+  --animate-page-enter3: page-enter 1600ms ease-out both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    filter: blur(100px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

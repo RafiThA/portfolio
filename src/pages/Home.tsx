@@ -14,7 +14,7 @@ export default function Home() {
                 <div className="flex justify-center items-center absolute w-full h-full">
                     <div className="w-[calc(100%-2.5rem)] h-[calc(100%-2.5rem)] bg-white/10 backdrop-blur-xs z-10 flex flex-col">
 
-                        <img className="w-full h-full filter-blur-1" src="/Profile.png" alt="foto" />
+                        <img className="w-full h-full filter-blur-1" src="/portfolio/Profile.png" alt="foto" />
                         <h1>Rafael Molleja Jiménez</h1>
                         <h2>Ingeniero informatico especializado en computación</h2>
                         <a href="#">Github</a>
