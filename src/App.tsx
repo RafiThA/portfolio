@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router'
 
-import Home from './pages/Home';
-import Dev from './pages/Dev';
+//import Home from './pages/Home';
+//import Dev from './pages/Dev';
 import PreContact from './pages/PreContact';
 
 import './styles/App.css'
