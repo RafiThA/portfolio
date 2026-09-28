@@ -1,30 +1,28 @@
 import { HashRouter, Routes, Route, Navigate } from 'react-router'
 
-//import Home from './pages/Home';
-//import Dev from './pages/Dev';
-import PreContact from './pages/PreContact';
-
-import './styles/App.css'
+import Profile from './pages/Profile';
+import Projects from './pages/Projects';
+import Education from './pages/Education';
+import Experience from './pages/Experience';
+import Contact from './pages/Contact';
+import ActiveLinks from './components/ActiveLinks';
 
 function App() {
 
 	return (
 		<HashRouter>
+			<ActiveLinks />
 			<Routes>
-				{
-				/* Until finished 
-				<Route path="/" element={<Home />} />
-				<Route path="/dev" element={<Dev />} />
-				*/}
+				
+				<Route path="/profile" element={<Profile />} />
+				<Route path="/projects" element={<Projects />} />
+				<Route path="/education" element={<Education />} />
+				<Route path="/experience" element={<Experience />} />
+				<Route path="/contact" element={<Contact />} />
 
 				{/* Default route handler*/}
-				{/* Until finished
-					<Route path="*" element={<Navigate to="/" />} />
-				*/}
-
-				<Route path="/" element={<PreContact />} />
-
-				<Route path="*" element={<Navigate to="/" />} />
+				<Route path="*" element={<Navigate to="/profile" />} />
+				
 
 			</Routes>
 		</HashRouter>

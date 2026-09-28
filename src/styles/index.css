@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Bitcount';
+    font-style: normal;
+    font-display: swap;
+    src: url('../assets/fonts/Bitcount_Prop_Single/Bitcount.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Micro';
+    font-style: normal;
+    font-display: swap;
+    src: url('../assets/fonts/Micro_5/Micro5-Regular.ttf') format('truetype');
+}
+
+@theme {
+    --font-bitcount: 'Bitcount', monospace;
+    --font-micro: 'Micro', sans-serif;
+}
+
+@layer base {
+
+    html {
+        @apply scroll-smooth scrollbar-none;
+    }
+
+    h1 {
+        @apply font-bitcount text-3xl font-medium;
+    }
+
+    p {
+        @apply font-mono;
+    }
+}
+
+@layer components {
+
+    .nb-btn {
+        @apply text-white p-1;
+
+        @variant hover, active {
+            @apply text-black bg-white;
+        }
+    }
+
+    .nb-btn-selected {
+        @apply p-1 text-pink-500 bg-white;
+    } 
+}

@@ -1,11 +1,11 @@
 import ActiveLinks from '../components/ActiveLinks';
 
-export default function Dev() {
+export default function Education() {
     return (
         <>
-        <ActiveLinks />
+        
         <div>
-            <h1>Dev</h1>
+            <h1>Education</h1>
         </div>
         </>
     )
