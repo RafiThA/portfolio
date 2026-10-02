@@ -1,149 +1,300 @@
+import { lazy, useEffect, useState } from "react";
+
+const TextType = lazy(() => import("../components/bits/TextType"));
+const DecryptedText = lazy(() => import("../components/bits/DecryptedText"));
+const MicroSlats = lazy(() => import("../components/bits/MicroSlats"));
+const DotField = lazy(() => import("../components/bits/DotField"));
+
+import DomainGrid from '../components/DomainGrid';
 import ActiveLinks from '../components/ActiveLinks';
-import ShapeWaves from '../components/ShapeWaves';
+import Selector from '../components/Selector';
+import Card from '../components/Card';
+import RoadMap from '../components/RoadMap';
+import Loading from "../components/Loading";
 
 export default function Profile() {
 
+    const [ready, setReady] = useState(false);
+    const [loadingFinished, setLoadingFinished] = useState(false);
+
+    useEffect(() => {
+
+        Promise.all([
+            import("../components/bits/TextType"),
+            import("../components/bits/DecryptedText"),
+            import("../components/bits/MicroSlats"),
+            import("../components/bits/DotField"),
+        ]).then(() => {
+
+            setReady(true);
+        });
+
+    }, []);
+
+    if (!loadingFinished) return (<Loading ready={ready} onFinished={() => setLoadingFinished(true)} />);
+
     return (
-        <div>
-            
-            {/* Header section */}
-            <div id="profile" className="w-full h-dvh relative">
+        <>
+            <ActiveLinks />
 
-                <div className="flex justify-center items-center absolute w-full h-full">
-                    <div className="w-[calc(100%-2.5rem)] h-[calc(100%-2.5rem)] bg-white/10 backdrop-blur-xs z-10
-                                    flex flex-col items-center justify-start gap-2">
+            {/* Profile section */}
+            <div id="profile" className="selection:bg-pink-500 selection:text-white">
 
-                        <div className="w-full aspect-square flex justify-center items-center">
-                            <div className="absolute w-1/10 aspect-square bg-pink-500 top-3 left-3" />
-                            <img className="w-9/10 h-9/10 bg-white/40" src="/portfolio/Profile.png" alt="foto" />
+                {/* Animated Bg section */}
+                <div className="w-full h-screen relative">
+
+                    {/* Center container */}
+                    <div className="flex justify-center items-center absolute w-full h-full">
+                        
+                        {/* Content section */}
+                        <div className="relative w-[calc(100%-2.5rem)] h-[calc(100%-2.5rem)] bg-white/10 backdrop-blur-xs z-10
+                                        flex flex-col items-center justify-start gap-2">
+                            
+                            {/* Photo section */}
+                            <div className="relative w-full aspect-square flex justify-center items-center
+                                            sm:w-8/10 md:w-7/10 lg:w-5/10 xl:w-4/10 2xl:w-3/10">
+
+                                <div className="absolute w-1/10 aspect-square bg-pink-500 top-3 left-3" />
+
+                                <Selector className="absolute top-3 right-3 z-100"/>
+
+                                <img className="w-9/10 h-9/10 bg-white/40" src="/portfolio/Profile.png" alt="foto" />
+                            
+                            </div>
+                            
+
+                            <h1 className="w-9/10 text-white text-center bg-black/70 backdrop-blur-xs pt-5 pb-5">
+                                <TextType 
+                                    text={["Rafael Molleja Jiménez", "Rafael", "Molleja", "Jiménez", "Rafael Molleja Jiménez"]}
+                                    typingSpeed={75}
+                                    pauseDuration={1500}
+                                    showCursor
+                                    cursorCharacter="█"
+                                    deletingSpeed={50}
+                                    variableSpeed={{ min: 60, max: 120 }}
+                                    cursorBlinkDuration={0.5}
+                                    loop={false}
+                                    className="w-full"
+                                />
+                            </h1>
+                            
+
+                            <p className="w-full font-micro text-3xl text-white text-center">
+                                <DecryptedText
+                                    text="Ingeniero Informatico"
+                                    speed={100}
+                                    revealDirection="start"
+                                    sequential
+                                    useOriginalCharsOnly={false}
+                                    animateOn="inViewHover"
+                                />
+                            </p>
+
+                            <p className="w-full font-micro text-2xl text-white text-center">
+                                <DecryptedText
+                                    text="Especializado en Computación"
+                                    speed={100}
+                                    revealDirection="start"
+                                    sequential
+                                    useOriginalCharsOnly={false}
+                                    animateOn="inViewHover"
+                                />
+                            </p>
+                            
+
+                            <div className="select-none absolute right-0 bottom-0 w-full h-full flex justify-end items-end gap-5 p-5">
+                                <a href="https://github.com/RafiThA" target="_blank" rel="noopener noreferrer"><img className="social-btn" src="/portfolio/Github.png" alt="github" /></a>
+                                <a href="https://www.linkedin.com/in/rafael-molleja-jim%C3%A9nez/" target="_blank" rel="noopener noreferrer"><img className="social-btn" src="/portfolio/Linkedin.png" alt="linkedin" /></a>
+                                <a href="https://www.instagram.com/rafaelmj__?stkn=dzh4aW14YzIzbjg0" target="_blank" rel="noopener noreferrer"><img className="social-btn" src="/portfolio/Instagram.png" alt="instagram" /></a>
+                                <a href="https://buymeacoffee.com/rafaelmolln" target="_blank" rel="noopener noreferrer"><img className="social-btn" src="/portfolio/Coffee.png" alt="buymeacoffee" /></a>
+                            </div>
+
                         </div>
-                        
-                        <h1 className="text-white">Rafael Molleja Jiménez</h1>
-                        
-                        <p className="font-micro text-3xl text-pink-500">Ingeniero Informatico</p>
-                        <p className="font-micro text-3xl text-pink-500">Especializado en Computación</p>
-                        
-                        <a href="#">Github</a>
-                        
-                        <a href="#">Linkedin</a>
+                    </div>
+                    
+                    <MicroSlats
+                        color="#ffffff"
+                        glintColor="#EC4899"
+                        backgroundColor="#000000"
+                        slatWidth={9}
+                        slatHeight={9}
+                        gap={3}
+                        roundness={1}
+                        speed={0.5}
+                        scale={1}
+                        direction={250}
+                        chop={0}
+                        stretch={0}
+                        glint={1.1}
+                        contrast={1.1}
+                        perspective={0.5}
+                        fog={0.5}
+                        interactive
+                        cursorStrength={1.1}
+                        cursorSize={25}
+                        swirl={0}
+                        trail={1}
+                        lean={0}
+                        intro
+                        introDuration={3}
+                        paused={false}
+                    />
+
+                </div>
+
+                {/* First section */}
+                <div className="h-full w-full flex flex-col items-center justify-start gap-2 p-10
+                                bg-linear-to-b from-white from-50% to-black">
+
+                    <h1 className="py-10 md:py-20 lg:py-30">SOBRE MÍ</h1>
+
+                    <p className="sm:w-150">
+                        Ingeniero Informático por la Universidad de Córdoba, con especialización en Computación.
+                    </p>
+
+                    <p className="sm:w-150">
+                        Poseo un gran interés en el ámbito de la inteligencia artificial, la visión por computador, el diseño UX/UI y la gestión y análisis de datos.
+                    </p>
+
+                    <p className="sm:w-150">
+                        A nivel profesional, me defino como una persona competente, proactiva y orientada al aprendizaje continuo, con especial motivación por adquirir y desarrollar nuevas habilidades en el sector tecnológico.
+                    </p>
+
+
+                    <h1 className="py-10 md:py-20 lg:py-30">VISIÓN</h1>
+
+                    <p className="sm:w-150">
+                        Veo la tecnologia como un arte para poder expresar creatividad e innovación mediante el diseño. Creo que menos es más, y me fascina poder crear arte con todas las herramientas que la tecnología pone en disposición para poder ayudar y mejorar la vida de otras personas.
+                    </p>
+
+                    <h1 className="py-10 md:py-20 lg:py-30">DOMINIO</h1>
+                    
+                    <DomainGrid />
+                    
+                </div>
+            </div>
+            
+
+            {/*------------------------------------------------------------------------------------------------*/}
+
+
+            {/* Second body section */}
+            <div className="h-full w-full flex flex-col items-center justify-start gap-2 p-10 bg-black selection:bg-pink-500">
+
+                <div className="w-full h-full min-h-screen flex flex-col items-center justify-start gap-5">
+
+                    <h1 id="projects" className="py-10 md:py-20 lg:py-30 text-white">PROYECTOS</h1>
+
+                    <div className="w-full h-full max-lg:flex max-lg:flex-col items-center justify-start gap-5
+                                    lg:grid lg:grid-cols-3 lg:gap-5">
+
+                        <Card
+                            
+                            header={`Experiencia Interactiva sobre "El Ajedrecista" y Agente IA del inventor Leonardo Torres Quevedo`}
+                            content={`Trabajo de Fin de Grado sobre el desarrollo de una aplicación de realidad mixta que recrea "El Ajedrecista", el histórico autómata diseñado por el ingeniero e inventor Leonardo Torres Quevedo, junto con el desarrollo de un agente de IA basado en modelos de lenguaje (LLM) con contexto personalizado para la plataforma Meta Quest`}
+                            banner="/portfolio/images/leonardo-banner.png"
+                            links={[
+                                {url: "https://github.com/RafiThA/Experiencia-Interactiva-sobre-El-Ajedrecista-y-Agente-IA-del-inventor-Leonardo-Torres-Quevedo", text: "Enlace al proyecto"},
+                                {url: "https://github.com/RafiThA/Experiencia-Interactiva-sobre-El-Ajedrecista-y-Agente-IA-del-inventor-Leonardo-Torres-Quevedo/releases/tag/v1.1.0", text: "Descarga la última versión"}
+                            ]}
+                        />
+
+                        <Card
+                            
+                            header={`MusicQuiz`}
+                            content={`MusicQuiz es un juego donde los jugadores pueden adivinar canciones subidas de manera local. Permite personalizar el juego y jugar en modo multijugador`}
+                            banner="/portfolio/images/musicquiz-banner.jpeg"
+                            links={[
+                                    {url: "https://github.com/RafiThA/MusicQuiz", text: "Enlace al proyecto"},
+                                    {url: "https://github.com/RafiThA/MusicQuiz/releases/tag/v1.0.0", text: "Descarga la última versión"},
+                                ]}
+                        />
+
+                        <Card
+                            header={`QRStock`}
+                            content={`QRStock es una webapp y aplicación móvil que permite gestionar el inventario para varios lugares. Permite generar y escanear QR para notificar cuando un objeto es recogido y devuelto de un espacio y ver el estado del stock en cualquier momento`}
+                            banner="/portfolio/images/qrstock-banner.jpeg"
+                            links={[
+                                {url: "https://github.com/RafiThA/QRStock", text: "Enlace al proyecto"}
+                            ]}
+                        />
 
                     </div>
+
+                </div>
+
+
+                <div className="w-full h-full min-h-screen flex flex-col items-center justify-start gap-5">
+
+                    <h1 id="experience" className="py-10 md:py-20 lg:py-30 text-white">EXPERIENCIA</h1>
+                    
+                    <RoadMap
+                        milestones={[
+                            {header: 'Indra Group', desc: 'Ingeniero de Visión Artificial - Prácticas Empresa', location: 'Córdoba, España', dates: 'MAR 2026 - JUL 2026'},
+                        ]}
+                        className="w-full h-[60vh]"
+                    />
+
                 </div>
                 
-                <ShapeWaves
-                    text=""
-                    fontFamily='Geist, "Geist Sans", system-ui, sans-serif'
-                    fontWeight={500}
-                    textSize={0.6}
-                    shapes="mixed"
-                    cellSize={10}
-                    dotSize={0.75}
-                    color="#929292"
-                    hoverColor="#ffffff"
-                    backgroundColor="#120f17"
-                    speed={1}
-                    scale={1}
-                    contrast={1}
-                    brightness={0.4}
-                    flow={0}
-                    direction={0}
-                    fade={0.25}
-                    interactive
-                    splashRadius={40}
-                    splashStrength={0.4}
-                    glow={0.35}
-                    intro
-                    introDuration={1.6}
-                    paused={false}
-                    onError={(error) => {console.error('ShapeWaves error:', error);}}
-                    className="absolute w-full h-full z-0"
-                />
-            </div>
 
-            {/* Body section */}
-            <div className="h-full w-full flex flex-col items-center justify-start gap-2 p-4">
+                <div className="w-full h-full min-h-screen flex flex-col items-center justify-start gap-5">
 
-                <h1 className="text-pink-500">SOBRE MÍ</h1>
+                    <h1 id="education" className="py-10 md:py-20 lg:py-30 text-white">FORMACIÓN</h1>
 
-                <p>
-                    Ingeniero Informático por la Universidad de Córdoba, con especialización en Computación.
-                </p>
+                    <RoadMap
+                        milestones={[
+                            {header: 'Bachillerato Tecnológico', desc: 'IES Medina Azahara', location: 'Córdoba, España', dates: 'SEP 2020 - JUL 2022'},
+                            {header: 'Grado en Ingeniería Informática con especialización en Computación', desc: 'Universidad de Córdoba', location: 'Córdoba, España', dates: 'SEP 2022 - JUL 2026'},
+                        ]}
+                        className="w-full h-[120vh]"
+                    />
 
-                <p>
-                    Poseo un gran interés en el ámbito de la inteligencia artificial, la visión por computador, el diseño UX/UI y la gestión y análisis de datos.
-                </p>
-
-                <p>
-                    A nivel profesional, me defino como una persona competente, proactiva y orientada al aprendizaje continuo, con especial motivación por adquirir y desarrollar nuevas habilidades en el sector tecnológico.
-                </p>
-
-
-                <h1>Vision</h1>
-                <p>Veo la tecnologia como un arte para poder expresar creatividad e innovación mediante el diseño. Creo que menos es más, y me fascina poder crear arte con todas las herramientas que la tecnología pone en disposición para poder ayudar y mejorar la vida de otras personas.</p>
-
-                <h1>Dominio</h1>
-                <div className="flex flex-wrap">
-                    <span>Electron</span>
-                    <span>Typescript</span>
-                    <span>Javascript</span>
-                    <span>Meta Quest</span>
-                    <span>Unity</span>
-                    <span>Ollama</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Tailwind CSS</span>
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>Next.js</span>
-                    <span>OpenCV</span>
-                    <span>C++</span>
-                    <span>C</span>
-                    <span>C#</span>
-                    <span>Python</span>
-                    <span>Java</span>
-                    <span>SQL</span>
-                    <span>Android</span>
-                    <span>IOS</span>
-                    <span>Vite</span>
-                    <span>Angular</span>
-                    <span>VSCode</span>
-                    <span>Linux Bash</span>
-                    <span>Github</span>
-                    <span>GitLab</span>
-                    <span>Git</span>
-                    <span>Slack</span>
-                    <span>Teams</span>
-                    <span>Wordpress</span>
-                    <span>Flask</span>
-                    <span>PL/SQL</span>
-                    <span>SQLlite</span>
-                    <span></span>
                 </div>
 
 
+                <div className="relative w-full h-full flex flex-col items-center justify-start gap-5">
+                    
+                    <h1 id="contact" className="py-10 md:py-20 lg:py-30 text-white">CONTACTO</h1>
 
-                <h1 id="projects">Proyectos</h1>
-                <p>Hacer una rueda con mis proyectos y si clickas te sale mas info</p>
+                    <div className="relative w-full h-full flex flex-col items-center justify-center gap-5 py-10">
 
-                <h1 id="experience">Experiencia</h1>
-                <p>Practicas</p>
-                <p>Buscando oportunidad de primer empleo</p>
+                        <DotField
+                            dotRadius={1.5}
+                            dotSpacing={14}
+                            bulgeStrength={0}
+                            glowRadius={0}
+                            sparkle
+                            waveAmplitude={0}
+                            cursorRadius={0}
+                            cursorForce={0}
+                            bulgeOnly
+                            gradientFrom="#ffffff"
+                            gradientTo="#ffffff"
+                            glowColor="#000000"
+                            className="absolute w-full h-full top-0 left-0 z-0"
+                        />
 
-                <h1 id="education">Formación</h1>
-                <p>Bachi, grado y master</p>
+                        <a href="mailto:rafael.molleja04@gmail.com" target="_blank" rel="noopener noreferrer" className="z-10">rafael.molleja04@gmail.com</a>
+                        <a href="tel:+34666989133" target="_blank" rel="noopener noreferrer" className="z-10">+34 666 989 133</a>
 
-                <h1>Idiomas</h1>
-                <p>Lista en la derecha</p>
+                        <div className="w-full h-full flex justify-center items-center gap-5">
+                            <a href="https://github.com/RafiThA" target="_blank" rel="noopener noreferrer" className="z-10"><img className="social-btn invert" src="/portfolio/Github.png" alt="github" /></a>
+                            <a href="https://www.linkedin.com/in/rafael-molleja-jim%C3%A9nez/" target="_blank" rel="noopener noreferrer" className="z-10"><img className="social-btn" src="/portfolio/Linkedin.png" alt="linkedin" /></a>
+                            <a href="https://www.instagram.com/rafaelmj__?stkn=dzh4aW14YzIzbjg0" target="_blank" rel="noopener noreferrer" className="z-10"><img className="social-btn" src="/portfolio/Instagram.png" alt="instagram" /></a>
+                            <a href="https://buymeacoffee.com/rafaelmolln" target="_blank" rel="noopener noreferrer" className="z-10"><img className="social-btn" src="/portfolio/Coffee.png" alt="buymeacoffee" /></a>
+                        </div>
 
-                <h1 id="contact">Contacto</h1>
-                <p>mi conectacto</p>
+                    </div>
+
+                </div>
+
+                {/* Space for navbar */}
+                <div className="h-10 w-full bg-black" />
 
             </div>
-            
-            {/* Space for tab */}
-            <div className="h-13 w-full" />
 
-        </div>
+        </>
     
     );
 }

@@ -1,0 +1,79 @@
+{
+    "profile": {
+        "subtitle": "Ingeniero Informático",
+        "specialization": "Especializado en Computación"
+    },
+
+    "about": {
+        "title": "SOBRE MÍ",
+        "content1": "Ingeniero Informático por la Universidad de Córdoba, con especialización en Computación.",
+        "content2": "Poseo un gran interés en el ámbito de la inteligencia artificial, la visión por computador, el diseño UX/UI y la gestión y análisis de datos.",
+        "content3": "A nivel profesional, me defino como una persona competente, proactiva y orientada al aprendizaje continuo, con especial motivación por adquirir y desarrollar nuevas habilidades en el sector tecnológico."
+    },
+
+    "vision": {
+        "title": "VISIÓN",
+        "content": "Veo la tecnologia como un arte para poder expresar creatividad e innovación mediante el diseño. Creo que menos es más, y me fascina poder crear arte con todas las herramientas que la tecnología pone en disposición para poder ayudar y mejorar la vida de otras personas."
+    },
+
+    "domain": {
+        "title": "DOMINIO"
+    },
+
+    "projects": {
+        "title": "PROYECTOS",
+
+        "card1": {
+            "title": "Experiencia Interactiva sobre \"El Ajedrecista\" y Agente IA del inventor Leonardo Torres Quevedo",
+            "desc": "Trabajo de Fin de Grado sobre el desarrollo de una aplicación de realidad mixta que recrea \"El Ajedrecista\", el histórico autómata diseñado por el ingeniero e inventor Leonardo Torres Quevedo, junto con el desarrollo de un agente de IA basado en modelos de lenguaje (LLM) con contexto personalizado para la plataforma Meta Quest",
+            "link": "Enlace al proyecto",
+            "link2": "Descarga la última versión"
+        },
+
+        "card2": {
+            "title": "MusicQuiz",
+            "desc": "MusicQuiz es un juego donde los jugadores pueden adivinar canciones subidas de manera local. Permite personalizar el juego y jugar en modo multijugador",
+            "link": "Enlace al proyecto",
+            "link2": "Descarga la última versión"
+        },
+
+        "card3": {
+            "title": "QRStock",
+            "desc": "QRStock es una webapp y aplicación móvil que permite gestionar el inventario para varios lugares. Permite generar y escanear QR para notificar cuando un objeto es recogido y devuelto de un espacio y ver el estado del stock en cualquier momento",
+            "link": "Enlace al proyecto"
+        }
+    },
+
+    "experience": {
+        "title": "",
+        
+        "milestone1": {
+            "header": "Indra Group",
+            "desc": "Ingeniero de Visión Artificial - Prácticas Empresa",
+            "location": "Córdoba, España",
+            "dates": "MAR 2026 - JUL 2026"
+        }
+    },
+
+    "education": {
+        "title": "",
+        
+        "milestone1": {
+            "header": "Bachillerato Tecnológico",
+            "desc": "IES Medina Azahara",
+            "location": "Córdoba, España",
+            "dates": "SEP 2020 - JUL 2022"
+        },
+
+        "milestone2": {
+            "header": "Grado en Ingeniería Informática con especialización en Computación",
+            "desc": "Universidad de Córdoba",
+            "location": "Córdoba, España",
+            "dates": "SEP 2022 - JUL 2026"
+        }
+    },
+
+    "contact": {
+        "title": "CONTACTO"
+    }
+}

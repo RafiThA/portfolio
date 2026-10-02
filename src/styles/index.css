@@ -14,23 +14,80 @@
     src: url('../assets/fonts/Micro_5/Micro5-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'xahn';
+    font-style: normal;
+    font-display: swap;
+    src: url('../assets/fonts/Xanh_Mono/XanhMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'xahn';
+    font-style: italic;
+    font-display: swap;
+    src: url('../assets/fonts/Xanh_Mono/XanhMono-Italic.ttf') format('truetype');
+}
+
 @theme {
     --font-bitcount: 'Bitcount', monospace;
     --font-micro: 'Micro', sans-serif;
+    --font-xahn: 'xahn', monospace;
+
+    --animate-grid-animation-right: grid-animation-right 60s linear infinite;
+    --animate-grid-animation-left: grid-animation-left 60s linear infinite;
+    --animate-appear: appear 0.8s steps(1) infinite both;
+
+    @keyframes grid-animation-left {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes grid-animation-right {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 }
 
 @layer base {
 
     html {
-        @apply scroll-smooth scrollbar-none;
+        @apply scroll-smooth scrollbar-none bg-black;
     }
 
     h1 {
-        @apply font-bitcount text-3xl font-medium;
+        @apply font-bitcount text-4xl font-medium;
     }
 
     p {
-        @apply font-mono;
+        @apply font-xahn;
+    }
+
+    a {
+        @apply font-xahn underline underline-offset-2 text-white;
+
+        @variant hover, active {
+            @apply text-pink-500;
+        }
     }
 }
 
@@ -46,5 +103,25 @@
 
     .nb-btn-selected {
         @apply p-1 text-pink-500 bg-white;
-    } 
+    }
+
+    .social-btn {
+        @apply w-10 grayscale;
+    
+        @variant hover, active {
+            @apply grayscale-0 blur-xs;
+        }
+    }
+
+    .grid-element {
+
+        @apply w-25 sm:w-30 md:w-35 lg:w-40 mr-5 aspect-square rounded-xl bg-white/10 text-white shrink-0;
+        @apply flex flex-col items-center justify-center;
+        @apply transition-all duration-600 ease-in-out;
+        @apply border-2 border-white/20 backdrop-blur-xs;
+
+        @variant hover, active {
+            @apply scale-110 border-white/80;
+        }
+    }  
 }
