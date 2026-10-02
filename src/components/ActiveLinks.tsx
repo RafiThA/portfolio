@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../lang/Language';
 
 export default function  ActiveLinks() {
 
+    const { translate } = useLanguage();
     const [selected, setSelected] = useState<string>('profile');
 
     const goToSection = (sectionId: string) => {
@@ -85,27 +87,27 @@ export default function  ActiveLinks() {
 
                 <button className={selected === 'projects' ? 'nb-btn-selected' : 'nb-btn'}
                         onClick={() => {goToSection('projects');}}>
-                            PROYECTOS
+                            {translate('navbar/projects')}
                 </button>
 
                 <button className={selected === 'experience' ? 'nb-btn-selected' : 'nb-btn'}
                         onClick={() => {goToSection('experience');}}>
-                            EXPERIENCIA
+                            {translate('navbar/experience')}
                 </button>
 
                 <button className={selected === 'profile' ? 'nb-btn-selected' : 'nb-btn'}
                         onClick={() => {goToSection('profile');}}>
-                            PERFIL
+                            {translate('navbar/profile')}
                 </button>
 
                 <button className={selected === 'education' ? 'nb-btn-selected' : 'nb-btn'}
                         onClick={() => {goToSection('education');}}>
-                            FORMACIÓN
+                            {translate('navbar/education')}
                 </button>
 
                 <button className={selected === 'contact' ? 'nb-btn-selected' : 'nb-btn'}
                         onClick={() => {goToSection('contact');}}>
-                            CONTACTO
+                            {translate('navbar/contact')}
                 </button>
 
             </div>

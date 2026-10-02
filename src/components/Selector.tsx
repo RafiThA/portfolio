@@ -1,9 +1,13 @@
 import { useState } from "react";
+
 import { IoTriangleSharp, IoEllipseSharp, IoSquareSharp } from "react-icons/io5";
+import { useLanguage } from "../lang/Language";
 
 export default function Selector({className}: {className?: string}) {
 
     const [selected, setSelected] = useState<string>('Español');
+
+    const { setLanguage } = useLanguage();
 
     return (
         <div className={className}>
@@ -47,6 +51,7 @@ export default function Selector({className}: {className?: string}) {
                         `}
                         onClick={() => {
                             setSelected('Español');
+                            setLanguage('es');
                         }}
                     >
                         <p>Español</p>
@@ -62,6 +67,7 @@ export default function Selector({className}: {className?: string}) {
                         `}
                         onClick={() => {
                             setSelected('English');
+                            setLanguage('en');
                         }}
                     >
                         <p>English</p>

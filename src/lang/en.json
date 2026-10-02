@@ -1,0 +1,87 @@
+{
+    "profile": {
+        "subtitle": "Computer Science Engineer",
+        "specialization": "Especialized in Computing"
+    },
+
+    "about": {
+        "title": "ABOUT ME",
+        "content1": "Computer Engineer from the University of Córdoba, specialized in Computing.",
+        "content2": "I have a keen interest in the fields of artificial intelligence, computer vision, UX/UI design, and data management and analysis.",
+        "content3": "Professionally, I would describe myself as a competent, proactive individual committed to continuous learning, with a particular drive to acquire and develop new skills in the technology sector."
+    },
+
+    "vision": {
+        "title": "VISION",
+        "content": "I see technology as an art form that allows me to express creativity and innovation through design. I believe that less is more, and I am fascinated by the idea of creating art using all the tools that technology provides to help and improve other people’s lives."
+    },
+
+    "domain": {
+        "title": "DOMAIN"
+    },
+
+    "projects": {
+        "title": "PROJECTS",
+
+        "card1": {
+            "header": "Interactive experience on ‘El Ajedrecista’ and the AI agent created by inventor Leonardo Torres Quevedo",
+            "content": "Final degree project on the development of a mixed reality application that recreates ‘El Ajedrecista’, the historic automaton designed by the engineer and inventor Leonardo Torres Quevedo, alongside the development of an AI agent based on language models (LLMs) with customised context for the Meta Quest platform",
+            "link": "Link to the project",
+            "link2": "Download the latest version"
+        },
+
+        "card2": {
+            "header": "MusicQuiz",
+            "content": "MusicQuiz is a game where players can guess songs that have been uploaded locally. It allows you to customise the game and play in multiplayer mode",
+            "link": "Link to the project",
+            "link2": "Download the latest version"
+        },
+
+        "card3": {
+            "header": "QRStock",
+            "content": "QRStock is a web app and mobile app that enables you to manage stock across multiple locations. It allows you to generate and scan QR codes to record when an item is collected from or returned to a location, and to view stock levels at any time",
+            "link": "Link to the project"
+        }
+    },
+
+    "experience": {
+        "title": "EXPERIENCE",
+        
+        "milestone1": {
+            "header": "Indra Group",
+            "desc": "Artificial Vision Engineer - Innership",
+            "location": "Córdoba, España",
+            "dates": "MAR 2026 - JUL 2026"
+        }
+    },
+
+    "education": {
+        "title": "EDUCATION",
+        
+        "milestone1": {
+            "header": "Technological Baccalaureate",
+            "desc": "IES Medina Azahara",
+            "location": "Córdoba, España",
+            "dates": "SEP 2020 - JUL 2022"
+        },
+
+        "milestone2": {
+            "header": "Computer Science Engineering Degree",
+            "desc": "Universidad de Córdoba",
+            "location": "Córdoba, España",
+            "dates": "SEP 2022 - JUL 2026"
+        }
+    },
+
+    "contact": {
+        "title": "CONTACT"
+    },
+
+    "navbar": {
+        "profile": "PROFILE",
+        "projects": "PROJECTS",
+        "experience": "EXPERIENCE",
+        "education": "EDUCATION",
+        "contact": "CONTACT"
+    }
+}

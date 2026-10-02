@@ -7,7 +7,7 @@
     "about": {
         "title": "SOBRE MÍ",
         "content1": "Ingeniero Informático por la Universidad de Córdoba, con especialización en Computación.",
-        "content2": "Poseo un gran interés en el ámbito de la inteligencia artificial, la visión por computador, el diseño UX/UI y la gestión y análisis de datos.",
+        "content2": "Poseo un gran interés en el ámbito de la inteligencia artificial, la visión artificial, el diseño UX/UI y la gestión y análisis de datos.",
         "content3": "A nivel profesional, me defino como una persona competente, proactiva y orientada al aprendizaje continuo, con especial motivación por adquirir y desarrollar nuevas habilidades en el sector tecnológico."
     },
 
@@ -24,28 +24,28 @@
         "title": "PROYECTOS",
 
         "card1": {
-            "title": "Experiencia Interactiva sobre \"El Ajedrecista\" y Agente IA del inventor Leonardo Torres Quevedo",
-            "desc": "Trabajo de Fin de Grado sobre el desarrollo de una aplicación de realidad mixta que recrea \"El Ajedrecista\", el histórico autómata diseñado por el ingeniero e inventor Leonardo Torres Quevedo, junto con el desarrollo de un agente de IA basado en modelos de lenguaje (LLM) con contexto personalizado para la plataforma Meta Quest",
+            "header": "Experiencia Interactiva sobre \"El Ajedrecista\" y Agente IA del inventor Leonardo Torres Quevedo",
+            "content": "Trabajo de Fin de Grado sobre el desarrollo de una aplicación de realidad mixta que recrea \"El Ajedrecista\", el histórico autómata diseñado por el ingeniero e inventor Leonardo Torres Quevedo, junto con el desarrollo de un agente de IA basado en modelos de lenguaje (LLM) con contexto personalizado para la plataforma Meta Quest",
             "link": "Enlace al proyecto",
             "link2": "Descarga la última versión"
         },
 
         "card2": {
-            "title": "MusicQuiz",
-            "desc": "MusicQuiz es un juego donde los jugadores pueden adivinar canciones subidas de manera local. Permite personalizar el juego y jugar en modo multijugador",
+            "header": "MusicQuiz",
+            "content": "MusicQuiz es un juego donde los jugadores pueden adivinar canciones subidas de manera local. Permite personalizar el juego y jugar en modo multijugador",
             "link": "Enlace al proyecto",
             "link2": "Descarga la última versión"
         },
 
         "card3": {
-            "title": "QRStock",
-            "desc": "QRStock es una webapp y aplicación móvil que permite gestionar el inventario para varios lugares. Permite generar y escanear QR para notificar cuando un objeto es recogido y devuelto de un espacio y ver el estado del stock en cualquier momento",
+            "header": "QRStock",
+            "content": "QRStock es una webapp y aplicación móvil que permite gestionar el inventario para varios lugares. Permite generar y escanear QR para notificar cuando un objeto es recogido y devuelto de un espacio y ver el estado del stock en cualquier momento",
             "link": "Enlace al proyecto"
         }
     },
 
     "experience": {
-        "title": "",
+        "title": "EXPERIENCIA",
         
         "milestone1": {
             "header": "Indra Group",
@@ -56,7 +56,7 @@
     },
 
     "education": {
-        "title": "",
+        "title": "FORMACIÓN",
         
         "milestone1": {
             "header": "Bachillerato Tecnológico",
@@ -75,5 +75,13 @@
 
     "contact": {
         "title": "CONTACTO"
+    },
+
+    "navbar": {
+        "profile": "PERFIL",
+        "projects": "PROYECTOS",
+        "experience": "EXPERIENCIA",
+        "education": "FORMACIÓN",
+        "contact": "CONTACTO"
     }
 }

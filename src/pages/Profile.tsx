@@ -12,7 +12,11 @@ import Card from '../components/Card';
 import RoadMap from '../components/RoadMap';
 import Loading from "../components/Loading";
 
+import { useLanguage } from "../lang/Language";
+
 export default function Profile() {
+
+    const { translate } = useLanguage();
 
     const [ready, setReady] = useState(false);
     const [loadingFinished, setLoadingFinished] = useState(false);
@@ -81,7 +85,7 @@ export default function Profile() {
 
                             <p className="w-full font-micro text-3xl text-white text-center">
                                 <DecryptedText
-                                    text="Ingeniero Informatico"
+                                    text={`${translate("profile/subtitle")}`}
                                     speed={100}
                                     revealDirection="start"
                                     sequential
@@ -92,7 +96,7 @@ export default function Profile() {
 
                             <p className="w-full font-micro text-2xl text-white text-center">
                                 <DecryptedText
-                                    text="Especializado en Computación"
+                                    text={`${translate("profile/specialization")}`}
                                     speed={100}
                                     revealDirection="start"
                                     sequential
@@ -146,28 +150,28 @@ export default function Profile() {
                 <div className="h-full w-full flex flex-col items-center justify-start gap-2 p-10
                                 bg-linear-to-b from-white from-50% to-black">
 
-                    <h1 className="py-10 md:py-20 lg:py-30">SOBRE MÍ</h1>
+                    <h1 className="py-10 md:py-20 lg:py-30 uppercase">{translate('about/title')}</h1>
 
                     <p className="sm:w-150">
-                        Ingeniero Informático por la Universidad de Córdoba, con especialización en Computación.
+                        {translate('about/content1')}
                     </p>
 
                     <p className="sm:w-150">
-                        Poseo un gran interés en el ámbito de la inteligencia artificial, la visión por computador, el diseño UX/UI y la gestión y análisis de datos.
+                        {translate('about/content2')}
                     </p>
 
                     <p className="sm:w-150">
-                        A nivel profesional, me defino como una persona competente, proactiva y orientada al aprendizaje continuo, con especial motivación por adquirir y desarrollar nuevas habilidades en el sector tecnológico.
+                        {translate('about/content3')}
                     </p>
 
 
-                    <h1 className="py-10 md:py-20 lg:py-30">VISIÓN</h1>
+                    <h1 className="py-10 md:py-20 lg:py-30">{translate('vision/title')}</h1>
 
                     <p className="sm:w-150">
-                        Veo la tecnologia como un arte para poder expresar creatividad e innovación mediante el diseño. Creo que menos es más, y me fascina poder crear arte con todas las herramientas que la tecnología pone en disposición para poder ayudar y mejorar la vida de otras personas.
+                        {translate('vision/content')}
                     </p>
 
-                    <h1 className="py-10 md:py-20 lg:py-30">DOMINIO</h1>
+                    <h1 className="py-10 md:py-20 lg:py-30 uppercase">{translate('domain/title')}</h1>
                     
                     <DomainGrid />
                     
@@ -183,39 +187,39 @@ export default function Profile() {
 
                 <div className="w-full h-full min-h-screen flex flex-col items-center justify-start gap-5">
 
-                    <h1 id="projects" className="py-10 md:py-20 lg:py-30 text-white">PROYECTOS</h1>
+                    <h1 id="projects" className="py-10 md:py-20 lg:py-30 text-white uppercase">{translate('projects/title')}</h1>
 
                     <div className="w-full h-full max-lg:flex max-lg:flex-col items-center justify-start gap-5
                                     lg:grid lg:grid-cols-3 lg:gap-5">
 
                         <Card
                             
-                            header={`Experiencia Interactiva sobre "El Ajedrecista" y Agente IA del inventor Leonardo Torres Quevedo`}
-                            content={`Trabajo de Fin de Grado sobre el desarrollo de una aplicación de realidad mixta que recrea "El Ajedrecista", el histórico autómata diseñado por el ingeniero e inventor Leonardo Torres Quevedo, junto con el desarrollo de un agente de IA basado en modelos de lenguaje (LLM) con contexto personalizado para la plataforma Meta Quest`}
+                            header={translate('projects/card1/header')}
+                            content={translate('projects/card1/content')}
                             banner="/portfolio/images/leonardo-banner.png"
                             links={[
-                                {url: "https://github.com/RafiThA/Experiencia-Interactiva-sobre-El-Ajedrecista-y-Agente-IA-del-inventor-Leonardo-Torres-Quevedo", text: "Enlace al proyecto"},
-                                {url: "https://github.com/RafiThA/Experiencia-Interactiva-sobre-El-Ajedrecista-y-Agente-IA-del-inventor-Leonardo-Torres-Quevedo/releases/tag/v1.1.0", text: "Descarga la última versión"}
+                                {url: "https://github.com/RafiThA/Experiencia-Interactiva-sobre-El-Ajedrecista-y-Agente-IA-del-inventor-Leonardo-Torres-Quevedo", text: translate('projects/card1/link')},
+                                {url: "https://github.com/RafiThA/Experiencia-Interactiva-sobre-El-Ajedrecista-y-Agente-IA-del-inventor-Leonardo-Torres-Quevedo/releases/tag/v1.1.0", text: translate('projects/card1/link2')}
                             ]}
                         />
 
                         <Card
                             
-                            header={`MusicQuiz`}
-                            content={`MusicQuiz es un juego donde los jugadores pueden adivinar canciones subidas de manera local. Permite personalizar el juego y jugar en modo multijugador`}
+                            header={translate('projects/card2/header')}
+                            content={translate('projects/card2/content')}
                             banner="/portfolio/images/musicquiz-banner.jpeg"
                             links={[
-                                    {url: "https://github.com/RafiThA/MusicQuiz", text: "Enlace al proyecto"},
-                                    {url: "https://github.com/RafiThA/MusicQuiz/releases/tag/v1.0.0", text: "Descarga la última versión"},
+                                    {url: "https://github.com/RafiThA/MusicQuiz", text: translate('projects/card2/link')},
+                                    {url: "https://github.com/RafiThA/MusicQuiz/releases/tag/v1.0.0", text: translate('projects/card2/link2')},
                                 ]}
                         />
 
                         <Card
-                            header={`QRStock`}
-                            content={`QRStock es una webapp y aplicación móvil que permite gestionar el inventario para varios lugares. Permite generar y escanear QR para notificar cuando un objeto es recogido y devuelto de un espacio y ver el estado del stock en cualquier momento`}
+                            header={translate('projects/card3/header')}
+                            content={translate('projects/card3/content')}
                             banner="/portfolio/images/qrstock-banner.jpeg"
                             links={[
-                                {url: "https://github.com/RafiThA/QRStock", text: "Enlace al proyecto"}
+                                {url: "https://github.com/RafiThA/QRStock", text: translate('projects/card3/link')}
                             ]}
                         />
 
@@ -226,11 +230,11 @@ export default function Profile() {
 
                 <div className="w-full h-full min-h-screen flex flex-col items-center justify-start gap-5">
 
-                    <h1 id="experience" className="py-10 md:py-20 lg:py-30 text-white">EXPERIENCIA</h1>
+                    <h1 id="experience" className="py-10 md:py-20 lg:py-30 text-white uppercase">{translate('experience/title')}</h1>
                     
                     <RoadMap
                         milestones={[
-                            {header: 'Indra Group', desc: 'Ingeniero de Visión Artificial - Prácticas Empresa', location: 'Córdoba, España', dates: 'MAR 2026 - JUL 2026'},
+                            {header: translate('experience/milestone1/header'), desc: translate('experience/milestone1/desc'), location: translate('experience/milestone1/location'), dates: translate('experience/milestone1/dates')},
                         ]}
                         className="w-full h-[60vh]"
                     />
@@ -240,12 +244,12 @@ export default function Profile() {
 
                 <div className="w-full h-full min-h-screen flex flex-col items-center justify-start gap-5">
 
-                    <h1 id="education" className="py-10 md:py-20 lg:py-30 text-white">FORMACIÓN</h1>
+                    <h1 id="education" className="py-10 md:py-20 lg:py-30 text-white uppercase">{translate('education/title')}</h1>
 
                     <RoadMap
                         milestones={[
-                            {header: 'Bachillerato Tecnológico', desc: 'IES Medina Azahara', location: 'Córdoba, España', dates: 'SEP 2020 - JUL 2022'},
-                            {header: 'Grado en Ingeniería Informática con especialización en Computación', desc: 'Universidad de Córdoba', location: 'Córdoba, España', dates: 'SEP 2022 - JUL 2026'},
+                            {header: translate('education/milestone1/header'), desc: translate('education/milestone1/desc'), location: translate('education/milestone1/location'), dates: translate('education/milestone1/dates')},
+                            {header: translate('education/milestone2/header'), desc: translate('education/milestone2/desc'), location: translate('education/milestone2/location'), dates: translate('education/milestone2/dates')},
                         ]}
                         className="w-full h-[120vh]"
                     />
@@ -255,7 +259,7 @@ export default function Profile() {
 
                 <div className="relative w-full h-full flex flex-col items-center justify-start gap-5">
                     
-                    <h1 id="contact" className="py-10 md:py-20 lg:py-30 text-white">CONTACTO</h1>
+                    <h1 id="contact" className="py-10 md:py-20 lg:py-30 text-white uppercase">{translate('contact/title')}</h1>
 
                     <div className="relative w-full h-full flex flex-col items-center justify-center gap-5 py-10">
 
