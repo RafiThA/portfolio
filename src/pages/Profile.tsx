@@ -294,7 +294,9 @@ export default function Profile() {
                 </div>
 
                 {/* Space for navbar */}
-                <div className="h-10 w-full bg-black" />
+                <div className="h-10 w-full bg-black">
+                    <p className="text-white/50 text-center">{translate('human/text')}</p>
+                </div>
 
             </div>
 

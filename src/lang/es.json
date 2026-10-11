@@ -83,5 +83,9 @@
         "experience": "EXPERIENCIA",
         "education": "FORMACIÓN",
         "contact": "CONTACTO"
+    },
+
+    "human": {
+        "text": "Hecho por un humano"
     }
 }

@@ -83,5 +83,9 @@
         "experience": "EXPERIENCE",
         "education": "EDUCATION",
         "contact": "CONTACT"
+    },
+
+    "human": {
+        "text": "Made by an human"
     }
 }
